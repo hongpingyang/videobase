@@ -13,5 +13,16 @@
     <artifactId>video-service</artifactId>
     <version>1.0.0</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.hong.py</groupId>
+            <artifactId>video-pojo</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper</artifactId>
+        </dependency>
+    </dependencies>
+
 
 </project>

@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx
+       http://www.springframework.org/schema/tx/spring-tx.xsd" 
+       >
+       
+       <!--&lt;!&ndash; 开启注解扫描功能 &ndash;&gt;-->
+       <!--<context:annotation-config></context:annotation-config>-->
+       <!--&lt;!&ndash; 扫描controller外的包 &ndash;&gt;-->
+       <!--<context:component-scan base-package="com.hong.py.*">-->
+          <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>-->
+       <!--</context:component-scan>      -->
+       
+       <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+       
+
+       
+       <!-- 数据源datasource和连接池 -->      
+       <bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+         <property name="driverClassName" value="${driverClassName}"></property>
+         <property name="url" value="${url}"></property>
+         <property name="username" value="${user}"></property>
+         <property name="password" value="${password}"></property>
+       </bean>
+       
+       <!-- 配置sqlSessionFactory -->
+       <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+          <property name="dataSource" ref="dataSource"></property>
+           <!--<property name="typeAliasesPackage" value="com.hong.ego.mapper"></property>-->
+           <!-- 指定mybatis的配置文件 -->
+          <property name="configLocation" value="classpath:mybatis.xml"></property>
+       </bean>
+       
+       <!-- 扫描mapper -->
+       <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+          <property name="basePackage" value="com.hong.ego.mapper"></property>
+          <property name="sqlSessionFactoryBeanName" value="factory"></property>
+       </bean>
+       
+       <!-- 配置事务管理 -->
+       <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+           <property name="dataSource" ref="dataSource"></property>
+       </bean>
+       
+       <!-- 配置事务属性 -->
+       <tx:advice id="txAdvice" transaction-manager="transactionManager">
+          <tx:attributes>
+            <!-- 事务级别的  -->
+            <!-- REQUIRED:如果当前没有事务，就新建一个事务，如果已经存在一个事务中，加入到这个事务中。这是最常见的选择。 -->
+            <!-- SUPPORTS:支持当前事务，如果当前没有事务，就以非事务方式执行 -->
+              <tx:method name="get*"  read-only="true"/>
+              <tx:method name="find*"  read-only="true"/>
+              <tx:method name="select*"  read-only="true"/>
+              <tx:method name="query*"  read-only="true"/>
+              <tx:method name="ins*"    propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="save*"    propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="update*"  propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="delete*"  propagation="REQUIRED" rollback-for="java.lang.Exception"/>
+            <tx:method name="*" propagation="SUPPORTS"></tx:method>
+          </tx:attributes>
+       </tx:advice>
+       
+       <!-- 配置事务切入点 -->
+       <aop:config>
+         <aop:pointcut expression="execution(* com.hong.py.video.service.impl.dubbo.service.impl.*.*(..))"  id="pointCut" />
+         <aop:advisor advice-ref="txAdvice" pointcut-ref="pointCut"/>             
+       </aop:config>
+            
+       </beans>
+
+

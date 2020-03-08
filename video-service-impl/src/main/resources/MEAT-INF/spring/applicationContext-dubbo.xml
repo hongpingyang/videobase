@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.3.xsd
+        http://code.alibabatech.com/schema/dubbo 
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+        
+       <!-- 给服务起名称 -->
+      <dubbo:application name="service-provider" />     
+      <!-- 注册中心 -->
+      <dubbo:registry address="192.168.0.114:2181" protocol="zookeeper"></dubbo:registry>
+      <!-- host在服务器上必须配置，不然不知道注册成啥主机地址-->
+      <dubbo:protocol name="dubbo" port="20888" host="192.168.0.114"></dubbo:protocol>
+      <!--导入spring配置文件-->
+      <import resource="../../applicationContext.xml"/>
+</beans>
+        

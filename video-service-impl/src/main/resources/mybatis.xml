@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+
+     <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />  <!-- 开启驼峰命名 -->
+		<setting name="jdbcTypeForNull" value="NULL" />
+		<setting name="callSettersOnNulls" value="true"/>
+         <!-- 打印出sql语句-->
+         <setting name="logImpl" value="LOG4J2"/>
+         <setting name="logImpl" value="STDOUT_LOGGING"/>
+     </settings>
+     
+     <plugins>
+         <!-- 分页插件 -->
+        <plugin interceptor="com.github.pagehelper.PageInterceptor">
+           <property name="reasonable" value="true"/>
+        </plugin>
+     </plugins>
+    
+    <databaseIdProvider type="0">
+
+    </databaseIdProvider>
+</configuration>
