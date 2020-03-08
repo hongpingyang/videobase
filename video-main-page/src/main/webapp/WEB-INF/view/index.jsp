@@ -14,9 +14,28 @@
 
     <%--引入bootstrap的css全局样式--%>
     <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+        <link href="${ctx}/css/carousel.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
+
 <div class="container" >
+
+    <nav class="navbar navbar-default" role="navigation" >
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">H</a>
+            </div>
+            <form class="navbar-form navbar-right" role="search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">提交</button>
+            </form>
+        </div>
+    </nav>
+
     <!--轮播-->
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="2200">
         <!-- Indicators -->
@@ -57,6 +76,70 @@
             <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
             <span class="sr-only">Next</span>
         </a>
+    </div>
+
+
+    <h3 class="hborder" style="padding-left: 10px;"> <span class="label label-success">综艺</span></h3>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <img src="${ctx}/images/zxc.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. Etiam porta sem malesuaam id dolor idvestibulum at eros. Praeus magna.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img  src="${ctx}/images/zxc1.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Duis mollis, est non commodo lttis consectetur rsus commodo, s condimentum nibh.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img  src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
+        <div class="col-lg-3">
+            <img  src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
+    </div>
+
+    <h3 class="hborder" style="padding-left: 10px;"> <span class="label label-success">电影</span></h3>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/zxc.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. Etiam porta sem malesuaam id dolor idvestibulum at eros. Praeus magna.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/zxc1.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Duis mollis, est non commodo lttis consectetur rsus commodo, s condimentum nibh.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
+    </div>
+
+    <h3 class="hborder" style="padding-left: 10px;"> <span class="label label-success">电视剧</span></h3>
+
+    <div class="row">
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/zxc.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. Etiam porta sem malesuaam id dolor idvestibulum at eros. Praeus magna.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/zxc1.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Duis mollis, est non commodo lttis consectetur rsus commodo, s condimentum nibh.</p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
+        <div class="col-lg-3">
+            <img class="img-rounded" src="${ctx}/images/linux-command.jpg" alt="Generic placeholder image" width="260" height="140">
+            <p>Donec sed odio dui. risus.</p>
+        </div>
     </div>
 
 

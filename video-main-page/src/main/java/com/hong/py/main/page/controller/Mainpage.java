@@ -16,4 +16,10 @@ public class Mainpage {
         return "index";
     }
 
+    @RequestMapping("/1")
+    public String Search()
+    {
+        return "searchResult";
+    }
+
 }
