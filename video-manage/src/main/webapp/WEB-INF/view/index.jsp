@@ -14,11 +14,23 @@
 <head>
     <%--引入bootstrap的css全局样式--%>
     <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="${ctx}/css/fileinput.min.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/css/carousel.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="${ctx}/css/all.css" crossorigin="anonymous">
+    <link href="${ctx}/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>
     <%--引入jquery--%>
     <script src="${ctx}/jquery/jquery-1.12.4.min.js"></script>
+
+    <script src="${ctx}/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+    <script src="${ctx}/plugins/piexif.js" type="text/javascript"></script>
+    <script src="${ctx}/plugins/sortable.js" type="text/javascript"></script>
+    <script src="${ctx}/js/fileinput.min.js"></script>
     <%--引入bootstrap的js插件--%>
     <script src="${ctx}/js/bootstrap.min.js"></script>
+    <script src="${ctx}/locales/fr.js" type="text/javascript"></script>
+    <script src="${ctx}/locales/es.js" type="text/javascript"></script>
+    <script src="${ctx}/fas/theme.js" type="text/javascript"></script>
+    <script src="${ctx}/explorer-fas/theme.js" type="text/javascript"></script>
 </head>
 <body>
      <%--

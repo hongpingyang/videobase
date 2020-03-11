@@ -43,6 +43,11 @@
                         </div>
                     </div>
                     <div class="form-group">
+                      <div class="file-loading">
+                        <input id="file-0a" class="file" type="file" multiple data-min-file-count="1" data-theme="fas">
+                      </div>
+                    </div>
+                    <div class="form-group">
                         <label  class="col-sm-2 control-label">图片</label>
                         <div class="col-sm-9">
                             <input type="text" class="form-control" name="email" id="video_add_pic" placeholder="图片">

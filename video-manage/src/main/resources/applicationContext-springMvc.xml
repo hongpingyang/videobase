@@ -29,10 +29,13 @@
 	   <!--处理静态资源-->
 	   <mvc:resources mapping="/jquery/**" location="/WEB-INF/static/jquery/"></mvc:resources>
 	   <mvc:resources mapping="/js/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/js/"></mvc:resources>
+	   <mvc:resources mapping="/plugins/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/js/plugins/"></mvc:resources>
+	   <mvc:resources mapping="/locales/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/js/locales/"></mvc:resources>
+	   <mvc:resources mapping="/fas/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/themes/fas/"></mvc:resources>
+	   <mvc:resources mapping="/explorer-fas/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/themes/explorer-fas/"></mvc:resources>
 	   <mvc:resources mapping="/images/**" location="/WEB-INF/images/"></mvc:resources>
 	   <mvc:resources mapping="/css/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/css/"></mvc:resources>
 	   <mvc:resources mapping="/fonts/**" location="/WEB-INF/static/bootstrap-3.3.7-dist/fonts/"></mvc:resources>
-
 
 	   <!-- 文件上传 -->
 	   <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
