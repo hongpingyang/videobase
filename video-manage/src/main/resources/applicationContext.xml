@@ -20,6 +20,6 @@
     <!--<import resource="applicationContext-dubbo.xml"/>-->
 
     <!--扫描属性文件-->
-    <!--<context:property-placeholder location="classpath:commom.properties,classpath:redis.properties"/>-->
+    <context:property-placeholder location="classpath:commom.properties"/>
 
 </beans>

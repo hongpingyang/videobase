@@ -21,45 +21,47 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label">分类</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="name" id="video_add_category" placeholder="分类">
+                            <input type="text" class="form-control" name="video_add_category"  placeholder="分类">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">标题</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" id="video_add_title" placeholder="标题">
+                            <input type="text" class="form-control" name="video_add_title"  placeholder="标题">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">副标题</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" id="video_add_subtitle" placeholder="副标题">
+                            <input type="text" class="form-control" name="video_add_subtitle"  placeholder="副标题">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">播放地址</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" id="video_add_url" placeholder="播放地址">
+                            <input type="text" class="form-control" name="video_add_url"  placeholder="播放地址">
                         </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="file-loading">
-                        <input id="file-0a" class="file" type="file" multiple data-min-file-count="1" data-theme="fas">
-                      </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">图片</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" id="video_add_pic" placeholder="图片">
+                            <input type="text" class="form-control" name="video_add_pic" id="video_add_pic" placeholder="图片">
                         </div>
                     </div>
                     <div class="form-group">
                         <label  class="col-sm-2 control-label">图片2</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="email" id="video_add_pic2" placeholder="图片">
+                            <input type="text" class="form-control" name="video_add_pic2" id="video_add_pic2" placeholder="图片">
                         </div>
                     </div>
                 </form>
+                <div >
+                   <%-- <form nctype="multipart/form-data">--%>
+                       <div class="file-loading">
+                          <input id="uploadFiles" name="uploadFiles" type="file" class="file" multiple data-show-caption="true">
+                       </div>
+                    <%--</form>--%>
+                </div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -82,6 +84,41 @@
         $(formElementId).find(".help-block").text("");
     }
 
+    //初始化fileinput控件（第一次初始化）
+    function initFileInput(ctrlName, uploadUrl) {
+        var control = $('#' + ctrlName);
+        control.fileinput({
+            language: 'zh', //设置语言
+            uploadUrl: uploadUrl, //上传的地址
+            allowedFileExtensions : ['jpg', 'png','gif'],//接收的文件后缀
+            showUpload: true, //是否显示上传按钮
+            showRemove:true,
+            showCaption: false,//是否显示标题
+            maxFileCount: 2,
+            browseClass: "btn btn-primary", //按钮样式
+            previewFileIcon: "<i class='glyphicon glyphicon-king'></i>",
+        });
+
+        //导入文件上传完成之后的事件
+        control.on('fileuploaded', function(event, data, previewId, index){
+            var response = data.response;
+            $.each(response,function(id,path){//上传完毕，将文件名返回
+                console.log("path:"+path.url);
+                if(index==0) {
+                    $("#video_add_pic").val(path.url);
+                }else if(index==1) {
+                    $("#video_add_pic2").val(path.url);
+                }
+                //$("#form").append("<input class='imgClass' name='filePath' type='hidden' value='"+path.url+"'>");
+            });
+
+        });
+    }
+
+
+    //初始化
+    initFileInput("uploadFiles", "${ctx}/image/upload");
+
     /**
      * 为信息新增按钮绑定点击事件
      */
@@ -96,6 +133,9 @@
      * 为模态框中员工信息保存按钮绑定点击事件
      */
     $("#video_save_btn").click(function () {
+
+
+
         // 3.发送保存请求
         $.ajax({
             url:"${ctx}/video/save",
