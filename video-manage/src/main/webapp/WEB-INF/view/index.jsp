@@ -15,6 +15,7 @@
     <%--引入bootstrap的css全局样式--%>
     <link href="${ctx}/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/css/fileinput.min.css" rel="stylesheet" type="text/css">
+    <link href="${ctx}/css/fileinput-rtl.min.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/css/carousel.css" rel="stylesheet" type="text/css">
     <link href="${ctx}/css/all.css" rel="stylesheet" crossorigin="anonymous">
     <link href="${ctx}/explorer-fas/theme.css" media="all" rel="stylesheet" type="text/css"/>
