@@ -1,8 +1,9 @@
 package com.hong.py.video.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class VideoInfo {
+public class VideoInfo implements Serializable {
     private Long id;
 
     private Long categoryId;

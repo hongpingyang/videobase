@@ -115,6 +115,12 @@
             <artifactId>log4j-jcl</artifactId>
         </dependency>
 
+        <!--为dubbo与spring的整合提供支持-->
+        <dependency>
+            <groupId>com.alibaba.spring</groupId>
+            <artifactId>spring-context-support</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>dubbo</artifactId>

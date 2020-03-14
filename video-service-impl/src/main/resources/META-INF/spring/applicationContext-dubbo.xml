@@ -13,10 +13,14 @@
        <!-- 给服务起名称 -->
       <dubbo:application name="service-provider" />     
       <!-- 注册中心 -->
-      <dubbo:registry address="192.168.0.114:2181" protocol="zookeeper"></dubbo:registry>
+      <dubbo:registry address="192.168.1.215:2181" protocol="zookeeper"></dubbo:registry>
       <!-- host在服务器上必须配置，不然不知道注册成啥主机地址-->
-      <dubbo:protocol name="dubbo" port="20888" host="192.168.0.114"></dubbo:protocol>
-      <!--导入spring配置文件-->
+      <dubbo:protocol name="dubbo" port="20888"></dubbo:protocol>
+
+      <bean id="videoInfoDubboService" class="com.hong.py.video.service.impl.dubbo.service.impl.VideoInfoDubboServiceImpl"/>
+
+      <dubbo:service interface="com.hong.py.video.service.VideoInfoDubboService"  ref="videoInfoDubboService"/>
+
       <import resource="../../applicationContext.xml"/>
 </beans>
         

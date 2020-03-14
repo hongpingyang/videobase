@@ -48,15 +48,15 @@ public class ImageController {
         List<Map<String, Object>> mapList = new ArrayList<>();
         for (MultipartFile uploadFile:uploadFiles) {
             Map<String, Object> map = new HashMap<>();
-            /*try {
+            try {
                 map = imageService.upload(uploadFile);
             } catch (IOException e) {
                 e.printStackTrace();
                 map.put("error", 1);
                 map.put("message", "上传图片失败");
-            }*/
-            map.put("error", 0);
-            map.put("url", "http://127.0.0.1/测试图片");
+            }
+            /*map.put("error", 0);
+            map.put("url", "http://127.0.0.1/测试图片");*/
             mapList.add(map);
         }
         return mapList;

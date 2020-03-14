@@ -43,7 +43,7 @@
        
        <!-- 扫描mapper -->
        <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-          <property name="basePackage" value="com.hong.ego.mapper"></property>
+          <property name="basePackage" value="com.hong.py.video.service.impl.mapper"></property>
           <property name="sqlSessionFactoryBeanName" value="factory"></property>
        </bean>
        

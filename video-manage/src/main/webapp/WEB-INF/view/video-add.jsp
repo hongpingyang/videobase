@@ -23,39 +23,45 @@
                         <div class="form-group">
                         <label class="col-md-2 control-label">分类</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_category"  placeholder="分类">
+                            <input type="text" class="form-control" name="categoryId"  placeholder="分类">
                         </div>
                     </div>
                         <div class="form-group">
                         <label  class="col-md-2 control-label">标题</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_title"  placeholder="标题">
+                            <input type="text" class="form-control" name="title"  placeholder="标题">
                         </div>
                     </div>
                         <div class="form-group">
                         <label  class="col-md-2 control-label">副标题</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_subtitle"  placeholder="副标题">
+                            <input type="text" class="form-control" name="subTitle"  placeholder="副标题">
                         </div>
                     </div>
                         <div class="form-group">
                         <label  class="col-md-2 control-label">视频</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_url" id="video_add_url" placeholder="播放地址">
+                            <input type="text" class="form-control" name="url" id="video_add_url" placeholder="播放地址">
                         </div>
                     </div>
                         <div class="form-group">
                         <label  class="col-md-2 control-label">图片</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_pic" id="video_add_pic" placeholder="图片">
+                            <input type="text" class="form-control" name="pic" id="video_add_pic" placeholder="图片">
                         </div>
                     </div>
                         <div class="form-group">
                         <label  class="col-md-2 control-label">图片2</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="video_add_pic2" id="video_add_pic2" placeholder="图片">
+                            <input type="text" class="form-control" name="pic2" id="video_add_pic2" placeholder="图片">
                         </div>
                     </div>
+                        <div class="form-group">
+                            <label  class="col-md-2 control-label">描述</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control" name="content" id="video_add_content" placeholder="简要描述">
+                            </div>
+                        </div>
                     </div>
                     <div class="col-md-6">
                         <div >
@@ -203,7 +209,7 @@
             success:function (result) {
                 // alert(result.msg);
                 // 保存成功
-                if(result.code == "200"){
+                if(result.status == "200"){
                     // 保存成功后，关闭模态框，清除上一次的数据，跳转到最后一页
                     $('#videoAddModal').on('hidden.bs.modal', function () {
                         form_reset("#video_add_form");

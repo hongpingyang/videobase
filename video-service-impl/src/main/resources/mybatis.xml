@@ -20,8 +20,4 @@
            <property name="reasonable" value="true"/>
         </plugin>
      </plugins>
-    
-    <databaseIdProvider type="0">
-
-    </databaseIdProvider>
 </configuration>
