@@ -29,7 +29,7 @@
     <jstl-version>1.2</jstl-version>
     <javax.servlet-api-version>4.0.0</javax.servlet-api-version>
     <junit-version>4.12</junit-version>
-    <fastjson-version>1.2.47</fastjson-version>
+    <fastjson-version>1.2.83</fastjson-version>
     <jackson-databind-version>2.9.8</jackson-databind-version>
     <zkclient-version>0.10</zkclient-version>
     <log4j-version>2.3</log4j-version>
