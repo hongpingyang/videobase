@@ -40,7 +40,7 @@
     <commons-lang3-version>3.4</commons-lang3-version>
     <commons-io-version>2.5</commons-io-version>
     <common-fileupload-version>1.4</common-fileupload-version>
-    <common-net-version>1.4.1</common-net-version>
+    <common-net-version>3.9.0</common-net-version>
     <httpclient-version>4.5.9</httpclient-version>
     <pagehelper-version>5.1.4</pagehelper-version>
     <curator-version>4.0.1</curator-version>
